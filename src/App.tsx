@@ -6,15 +6,18 @@ import Pagination from './components/Pagination';
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [appPageAmount, setAppPageAmount] = useState(0);
+  const [disablePagination, setDisablePagination] = useState(false);
 
   return (
     <div className="App">
       <Container>
         <BizListContainer
+          disablePaginationHandler={status => setDisablePagination(status)}
           setEntirePageAmount={amount => setAppPageAmount(amount)}
-          pageNumber={currentPage} 
+          pageNumber={currentPage}
         />
-        <Pagination 
+        <Pagination
+          disabled={disablePagination}
           allPageNumber={appPageAmount}
           currentPage={currentPage}
           setPageNumber={pageNo => setCurrentPage(pageNo)}

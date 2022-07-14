@@ -5,9 +5,10 @@ interface Props {
     setPageNumber: (pageNo: number) => void
     allPageNumber: number;
     range?: number;
+    disabled ?: boolean;
 }
 
-const Pagination: React.FC<Props> = ({ currentPage, range = 5, allPageNumber, setPageNumber }) => {
+const Pagination: React.FC<Props> = ({ currentPage, range = 5 , disabled , allPageNumber, setPageNumber }) => {
     const [rangeNumber, setRangeNumber] = useState<number>(0);
 
     const changeRangeHandler = (action: "next" | "prev") => {
@@ -27,7 +28,11 @@ const Pagination: React.FC<Props> = ({ currentPage, range = 5, allPageNumber, se
     // if the parent don't specify all available page numbers, don't render the component!
     if (!allPageNumber) return null;
     return (
-        <div className="pagination">
+        <div className={`pagination ${disabled ? "pagination--disabled" : ""}`}>
+            {
+                disabled && <div className="pagination__disabledOverlay" />
+            }
+
             {
                 rangeNumber !== 0 && <div onClick={() => changeRangeHandler("prev")} className="pagination__rangeController">
                     <p>{"<"}</p>
