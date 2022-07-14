@@ -1,5 +1,15 @@
 $primary : #59e6a2;
+$baseBorderRadius : 5px;
 
 
 // design tokens
-$userBgColor : #eeeeee;
+
+$bizItemBorderRadius : $baseBorderRadius;
+$bizItemBorderColor : #dedfe1;
+$bizImageBoxBorderRadius : $baseBorderRadius;
+$bizImageBoxBorderColor : #d6d6d6;
+$bizImageBoxBgColor : #eeeeee;
+$bizDescColor : #717171;
+
+
+$bodyBgColor : #f8f9fd;

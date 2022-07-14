@@ -1,0 +1,50 @@
+.bizItem {
+    display: flex;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: $bizItemBorderRadius;
+    background-color: white;
+    border: 2px solid $bizItemBorderColor;
+    padding: 1rem;
+    justify-content: space-between;
+
+
+    &__imgBox {
+        width: 210px;
+        min-height: 130px;
+        background-color: $bizImageBoxBgColor ;
+        border-radius: $bizItemBorderRadius;
+        border: 2px solid $bizImageBoxBorderColor;
+        margin-left: 1rem;
+        flex-shrink: 0;
+    }
+
+    &__title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        direction: rtl;
+        margin-left: auto;
+    }
+
+    &__desc {
+        color: $bizDescColor;
+    }
+
+    &__rate {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-right: 1rem;
+        
+        svg {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+}
