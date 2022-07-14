@@ -6,10 +6,11 @@ import LoadingSpinner from "./LoadingSpinner";
 
 
 interface Props {
-    pageNumber : number
+    pageNumber : number;
+    setEntirePageAmount : (amount : number) => void;
 }
 
-const BizListContainer : React.FC<Props> = ({ pageNumber }) => {
+const BizListContainer : React.FC<Props> = ({ pageNumber , setEntirePageAmount}) => {
     const [biz, setBiz] = useState<IApiEntireResponse | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -19,6 +20,7 @@ const BizListContainer : React.FC<Props> = ({ pageNumber }) => {
             api(pageNumber)
                 .then(data => {
                     setBiz(data);
+                    setEntirePageAmount(data.TotalPage);
                     setLoading(false);
                 })
     } , []);

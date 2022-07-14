@@ -1,0 +1,49 @@
+.pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+
+
+    &__item {
+        margin: 0 .5rem;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        
+
+        &:hover {
+            color: $primary;
+        }
+        
+        &--active {
+            background-color: $primary;
+            color: white;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+
+    &__rangeController {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: .3s;
+        user-select: none;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
